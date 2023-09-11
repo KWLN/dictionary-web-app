@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/frontend-mentor-dictionary-web-app/static/css/main.073c9b0a.css",
+    "main.js": "/frontend-mentor-dictionary-web-app/static/js/main.eba3e5a9.js",
+    "index.html": "/frontend-mentor-dictionary-web-app/index.html",
+    "main.073c9b0a.css.map": "/frontend-mentor-dictionary-web-app/static/css/main.073c9b0a.css.map",
+    "main.eba3e5a9.js.map": "/frontend-mentor-dictionary-web-app/static/js/main.eba3e5a9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.eba3e5a9.js"
+  ]
+}
