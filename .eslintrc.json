@@ -20,6 +20,14 @@
   },
   "plugins": ["react"],
   "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        // Everything from a feature should be exported from its index.ts file which serves as its public API.
+        // Make sure we do not import by reaching into a feature directory.
+        "patterns": ["@/features/*/*"]
+      }
+    ],
     "react/react-in-jsx-scope": "off"
   },
   "settings": {
