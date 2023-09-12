@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Inconsolata';
+  src:
+    local('Inconsolata'),
+    url(./assets/fonts/inconsolata/Inconsolata-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-weight: 700;
+  src:
+    local('Inconsolata'),
+    url(./assets/fonts/inconsolata/Inconsolata-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src:
+    local('Inter'),
+    url(./assets/fonts/inter/Inter-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 700;
+  src:
+    local('Inter'),
+    url(./assets/fonts/inter/Inter-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lora';
+  src:
+    local('Lora'),
+    url(./assets/fonts/lora/Lora-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lora';
+  font-weight: 700;
+  src:
+    local('Lora'),
+    url(./assets/fonts/lora/Lora-Bold.ttf) format('truetype');
+}

@@ -1,3 +1,7 @@
 export function DictionaryPage() {
-  return <h1>Hello world</h1>;
+  return (
+    <h1>
+      <em>Hello</em>Hello world
+    </h1>
+  );
 }
