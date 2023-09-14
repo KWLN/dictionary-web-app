@@ -19,7 +19,7 @@
     }
   },
   "lint-staged": {
-    "*": "npm run precommit"
+    "*{.js,.jsx,.ts,.tsx,.html,.md,.json}": "npm run precommit"
   },
   "scripts": {
     "predeploy": "npm run build",
