@@ -43,6 +43,8 @@
     url(./assets/fonts/lora/Lora-Bold.ttf) format('truetype');
 }
 
-body {
-  color: '#2D2D2D';
+body,
+html {
+  font-family: 'Inter', sans-serif;
+  color: #2d2d2d;
 }
