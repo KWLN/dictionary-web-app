@@ -1,19 +1,37 @@
 import { ChangeEvent, useState } from 'react';
-import { Icon, Input, InputWrapper } from './Search.styled';
+import { FieldContainer, Icon, Input, InputWrapper } from './Search.styled';
 import SearchIcon from './assets/icon-search.svg';
+import { InputError } from './types';
+import { ErrorMessage } from './ErrorMessage';
 
 export function Search() {
   const [inputValue, setInputValue] = useState<string>('');
+  const [inputError, setInputError] = useState<InputError>(null);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
-    setInputValue(event.target.value);
+
+    const newValue = event.target.value;
+    setInputValue(newValue);
+
+    if (!newValue) {
+      setInputError('empty');
+    } else {
+      setInputError(null);
+    }
   };
 
   return (
-    <InputWrapper>
-      <Input placeholder="Search for any word..." value={inputValue} onChange={handleInputChange} />
-      <Icon src={SearchIcon} alt="" />
-    </InputWrapper>
+    <FieldContainer>
+      <InputWrapper>
+        <Icon src={SearchIcon} alt="" />
+        <Input
+          placeholder="Search for any word..."
+          value={inputValue}
+          onChange={handleInputChange}
+        />
+      </InputWrapper>
+      <ErrorMessage error={inputError} />
+    </FieldContainer>
   );
 }

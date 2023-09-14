@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import { typography } from '../../constants/tokens';
 
+export const FieldContainer = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px',
+});
+
 export const InputWrapper = styled.div({
   position: 'relative',
 });
