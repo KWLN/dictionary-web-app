@@ -42,3 +42,7 @@
     local('Lora'),
     url(./assets/fonts/lora/Lora-Bold.ttf) format('truetype');
 }
+
+body {
+  color: '#2D2D2D';
+}
