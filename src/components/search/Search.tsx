@@ -3,10 +3,12 @@ import { FieldContainer, Icon, Input, InputWrapper } from './Search.styled';
 import SearchIcon from './assets/icon-search.svg';
 import { InputError } from './types';
 import { ErrorMessage } from './ErrorMessage';
+import { useSearchDictionaryApi } from '../../services/dictionary-api';
 
 export function Search() {
   const [inputValue, setInputValue] = useState<string>('');
   const [inputError, setInputError] = useState<InputError | null>(null);
+  const { data, loading, error } = useSearchDictionaryApi(inputValue);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
