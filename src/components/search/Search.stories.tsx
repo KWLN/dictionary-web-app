@@ -21,7 +21,3 @@ type Story = StoryObj<typeof Search>;
 export const Default: Story = {
   args: {},
 };
-
-export const Errored: Story = {
-  args: {},
-};
