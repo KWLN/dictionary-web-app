@@ -6,7 +6,7 @@ import { ErrorMessage } from './ErrorMessage';
 
 export function Search() {
   const [inputValue, setInputValue] = useState<string>('');
-  const [inputError, setInputError] = useState<InputError>(null);
+  const [inputError, setInputError] = useState<InputError | null>(null);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
@@ -29,9 +29,10 @@ export function Search() {
           placeholder="Search for any word..."
           value={inputValue}
           onChange={handleInputChange}
+          isInvalid={!!inputError}
         />
       </InputWrapper>
-      <ErrorMessage error={inputError} />
+      {inputError && <ErrorMessage error={inputError} />}
     </FieldContainer>
   );
 }

@@ -11,7 +11,7 @@ export const InputWrapper = styled.div({
   position: 'relative',
 });
 
-export const Input = styled.input({
+export const Input = styled.input<{ isInvalid: boolean }>((props) => ({
   boxSizing: 'border-box',
   border: 'none',
   borderRadius: '16px',
@@ -26,15 +26,17 @@ export const Input = styled.input({
   ...typography.headingSmall,
   fontWeight: 700,
 
+  outline: props.isInvalid ? '1px solid #FF5252' : 'none',
+
+  '&:active, &:focus': {
+    outline: `1px solid ${props.isInvalid ? '#FF5252' : '#A445ED'}`,
+  },
+
   '&::placeholder': {
     color: '#2D2D2D',
     opacity: 0.25,
   },
-
-  '&:active, &:focus': {
-    outline: '1px solid #A445ED',
-  },
-});
+}));
 
 export const Icon = styled.img({
   position: 'absolute',

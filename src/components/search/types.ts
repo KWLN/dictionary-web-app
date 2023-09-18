@@ -1,1 +1,1 @@
-export type InputError = 'empty' | null;
+export type InputError = 'empty';
