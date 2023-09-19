@@ -1,5 +1,5 @@
-import { Search } from '../../components/search';
+import { SearchBar } from '../../components/search-bar';
 
 export function DictionaryPage() {
-  return <Search />;
+  return <SearchBar />;
 }

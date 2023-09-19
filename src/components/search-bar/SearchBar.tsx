@@ -1,12 +1,12 @@
 import { ChangeEvent, useState } from 'react';
-import { FieldContainer, Icon, Input, InputWrapper } from './Search.styled';
+import { FieldContainer, Icon, Input, InputWrapper } from './SearchBar.styled';
 import SearchIcon from './assets/icon-search.svg';
 import { InputError } from './types';
 import { ErrorMessage } from './ErrorMessage';
 import { useSearchDictionaryApi } from '../../services/dictionary-api';
 import { useDebounce } from 'usehooks-ts';
 
-export function Search() {
+export function SearchBar() {
   const [inputValue, setInputValue] = useState<string>('');
   const [inputError, setInputError] = useState<InputError | null>(null);
 
