@@ -28,4 +28,10 @@ type WordResult = {
   word: string;
 };
 
-export type Response = WordResult[];
+type NoResult = {
+  message: string;
+  resolution: string;
+  title: string;
+};
+
+export type Response = WordResult[] | NoResult;

@@ -15,7 +15,6 @@ export const useSearchDictionaryApi = (searchInput: string) => {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchInput}`)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setData(res);
       })
       .catch((error) => setError(error))

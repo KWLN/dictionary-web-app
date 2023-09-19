@@ -4,11 +4,14 @@ import SearchIcon from './assets/icon-search.svg';
 import { InputError } from './types';
 import { ErrorMessage } from './ErrorMessage';
 import { useSearchDictionaryApi } from '../../services/dictionary-api';
+import { useDebounce } from 'usehooks-ts';
 
 export function Search() {
   const [inputValue, setInputValue] = useState<string>('');
   const [inputError, setInputError] = useState<InputError | null>(null);
-  const { data, loading, error } = useSearchDictionaryApi(inputValue);
+
+  const debouncedInputValue = useDebounce(inputValue, 500);
+  const { data, loading, error } = useSearchDictionaryApi(debouncedInputValue);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
