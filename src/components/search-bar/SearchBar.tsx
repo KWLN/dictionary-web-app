@@ -1,17 +1,26 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { FieldContainer, Icon, Input, InputWrapper } from './SearchBar.styled';
 import SearchIcon from './assets/icon-search.svg';
 import { InputError } from './types';
 import { ErrorMessage } from './ErrorMessage';
-import { useSearchDictionaryApi } from '../../services/dictionary-api';
 import { useDebounce } from 'usehooks-ts';
 
-export function SearchBar() {
+type Props = {
+  /** Callback that handles the fetching of data */
+  onSearch: (inputValue: string) => void;
+};
+
+export function SearchBar(props: Props) {
+  const { onSearch } = props;
+
   const [inputValue, setInputValue] = useState<string>('');
   const [inputError, setInputError] = useState<InputError | null>(null);
 
   const debouncedInputValue = useDebounce(inputValue, 500);
-  const { data, loading, error } = useSearchDictionaryApi(debouncedInputValue);
+
+  useEffect(() => {
+    onSearch(debouncedInputValue);
+  }, [debouncedInputValue, onSearch]);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();

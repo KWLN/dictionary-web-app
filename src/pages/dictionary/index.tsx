@@ -1,5 +1,8 @@
 import { SearchBar } from '../../components/search-bar';
+import { useSearchDictionaryApi } from '../../services/dictionary-api';
 
 export function DictionaryPage() {
-  return <SearchBar />;
+  const { fetchDefinition, data, loading, error } = useSearchDictionaryApi();
+
+  return <SearchBar onSearch={fetchDefinition} />;
 }
