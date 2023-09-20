@@ -20,7 +20,7 @@ type Pronunciation = {
   text: string;
 };
 
-type WordResult = {
+type DictionaryEntry = {
   meanings: Meaning[];
   phonetic: string;
   phonetics: Pronunciation[];
@@ -34,4 +34,4 @@ type NoResult = {
   title: string;
 };
 
-export type Response = WordResult[] | NoResult;
+export type ApiResponse = DictionaryEntry[] | NoResult;
