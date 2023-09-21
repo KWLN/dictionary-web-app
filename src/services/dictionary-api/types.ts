@@ -1,26 +1,26 @@
 // TODO: Remove unneeded fields and mark any nullable ones as such
 
-type Definition = {
+export type Definition = {
   antonyms: string[];
   definition: string;
   example?: string;
   synonyms: string[];
 };
 
-type Meaning = {
+export type Meaning = {
   antonyms: string[];
   definitions: Definition[];
   partOfSpeech: string;
   synonyms: string[];
 };
 
-type Pronunciation = {
+export type Pronunciation = {
   audio: string;
   sourceUrl?: string;
   text: string;
 };
 
-type DictionaryEntry = {
+export type ResultEntry = {
   meanings: Meaning[];
   phonetic: string;
   phonetics: Pronunciation[];
@@ -28,10 +28,14 @@ type DictionaryEntry = {
   word: string;
 };
 
-type NoResult = {
+export type NoResultsFound = {
   message: string;
   resolution: string;
   title: string;
 };
 
-export type ApiResponse = DictionaryEntry[] | NoResult;
+export type ApiResponse = ResultEntry[] | NoResultsFound;
+
+export const isNoResultsFound = (response: ApiResponse): response is NoResultsFound => {
+  return 'resolution' in response;
+};

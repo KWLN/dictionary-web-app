@@ -3,9 +3,9 @@ import { ApiResponse } from './types';
 
 type UseSearchDictionaryApiResult = {
   fetchDefinition: (searchInput: string) => void;
-  data?: ApiResponse;
+  data: ApiResponse | undefined;
   loading: boolean;
-  error?: Error;
+  error: Error | undefined;
 };
 
 export const useSearchDictionaryApi = (): UseSearchDictionaryApiResult => {
