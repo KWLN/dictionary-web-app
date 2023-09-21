@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from '../../constants/tokens';
+import { typography } from '../../../constants/tokens';
 
 export const Message = styled.p({
   ...typography.headingSmall,

@@ -1,8 +1,7 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { FieldContainer, Icon, Input, InputWrapper } from './SearchBar.styled';
 import SearchIcon from './assets/icon-search.svg';
-import { InputError } from './types';
-import { ErrorMessage } from './ErrorMessage';
+import { ErrorMessage, type InputError } from './error-message';
 import { useDebounce } from 'usehooks-ts';
 
 type Props = {
