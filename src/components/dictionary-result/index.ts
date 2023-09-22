@@ -1,0 +1,1 @@
+export { DictionaryResult } from './DictionaryResult';
