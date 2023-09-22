@@ -1,5 +1,6 @@
 import { ResultEntry } from '../../../services/dictionary-api/types';
-import { HeaderContainer, PronunciationAudio, WordDetails } from './Header.styled';
+import { HeaderContainer, PronunciationButton, WordDetails } from './Header.styled';
+import useSound from 'use-sound';
 
 type Props = {
   phonetic: ResultEntry['phonetic'];
@@ -11,6 +12,11 @@ export function Header(props: Props) {
   const { phonetic, phonetics, word } = props;
 
   const pronunciation = phonetics[0];
+  const [play] = useSound(pronunciation.audio);
+
+  const handlePronunciationButtonClick = () => {
+    play();
+  };
 
   return (
     <HeaderContainer>
@@ -18,7 +24,7 @@ export function Header(props: Props) {
         <h1>{word}</h1>
         <p>{phonetic}</p>
       </WordDetails>
-      <PronunciationAudio />
+      <PronunciationButton onClick={handlePronunciationButtonClick} />
     </HeaderContainer>
   );
 }

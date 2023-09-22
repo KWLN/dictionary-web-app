@@ -11,7 +11,7 @@ export const WordDetails = styled.div({
   flexDirection: 'column',
 });
 
-export const PronunciationAudio = styled.button({
+export const PronunciationButton = styled.button({
   width: '75px',
   height: '75px',
   borderRadius: '50%',
