@@ -52,7 +52,10 @@ html {
 }
 
 button {
-  /* The following removes all default styles from a button */
+  /*
+   * The following removes all default styles from a button.
+   * Source: https://clubmate.fi/button-reset
+   */
   background: none;
   border-width: 0;
   font-family: inherit;
