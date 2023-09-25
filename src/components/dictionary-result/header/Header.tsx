@@ -1,6 +1,6 @@
 import { ResultEntry } from '../../../services/dictionary-api/types';
-import { HeaderContainer, PronunciationButton, WordDetails } from './Header.styled';
-import useSound from 'use-sound';
+import { HeaderContainer, Phonetic, PronunciationButton, Word, WordDetails } from './Header.styled';
+import { useSound } from 'use-sound';
 
 type Props = {
   phonetic: ResultEntry['phonetic'];
@@ -11,6 +11,8 @@ type Props = {
 export function Header(props: Props) {
   const { phonetic, phonetics, word } = props;
 
+  // TODO: Find first phonetic that has `audio`,
+  // otherwise disable or hide button if there is no `audio` at all.
   const pronunciation = phonetics[0];
   const [play] = useSound(pronunciation.audio);
 
@@ -21,8 +23,8 @@ export function Header(props: Props) {
   return (
     <HeaderContainer>
       <WordDetails>
-        <h1>{word}</h1>
-        <p>{phonetic}</p>
+        <Word>{word}</Word>
+        <Phonetic>{phonetic}</Phonetic>
       </WordDetails>
       <PronunciationButton onClick={handlePronunciationButtonClick} />
     </HeaderContainer>
