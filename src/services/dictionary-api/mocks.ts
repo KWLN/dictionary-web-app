@@ -1,52 +1,58 @@
 import { ApiResponse, Definition, Meaning, Pronunciation, ResultEntry } from './types';
 
 export const MOCK_DEFINITION_NOUN: Definition = {
-  definition: '(possibly nonstandard) Someone or something that is tall.',
+  definition: '(etc.) A set of keys used to operate a typewriter, computer etc.',
+  synonyms: [],
+  antonyms: [],
+};
+
+export const MOCK_DEFINITION_NOUN_2: Definition = {
+  definition:
+    'A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.',
+  synonyms: [],
+  antonyms: [],
+};
+
+export const MOCK_DEFINITION_NOUN_3: Definition = {
+  definition:
+    'A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device',
   synonyms: [],
   antonyms: [],
 };
 
 export const MOCK_MEANING_NOUN: Meaning = {
   partOfSpeech: 'noun',
-  definitions: [MOCK_DEFINITION_NOUN],
+  definitions: [MOCK_DEFINITION_NOUN, MOCK_DEFINITION_NOUN_2, MOCK_DEFINITION_NOUN_3],
+  synonyms: ['electronic keyboard', 'piano'],
+  antonyms: [],
+};
+
+export const MOCK_DEFINITION_VERB: Definition = {
+  definition: 'To type on a computer keyboard.',
+  example: 'Keyboarding is the part of this job I hate the most.',
   synonyms: [],
   antonyms: [],
 };
 
-export const MOCK_DEFINITION_ADJECTIVE_1: Definition = {
-  antonyms: [],
-  definition:
-    '(of a person) Having a vertical extent greater than the average. For example, somebody with a height of over 6 feet would generally be considered to be tall.',
-  example: 'Being tall is an advantage in basketball.',
-  synonyms: [],
-};
-
-export const MOCK_DEFINITION_ADJECTIVE_2: Definition = {
-  antonyms: [],
-  definition:
-    '(of a building, etc.) Having its top a long way up; having a great vertical (and often greater than horizontal) extent; high',
-  synonyms: [],
-};
-
-export const MOCK_MEANING_ADJECTIVE: Meaning = {
+export const MOCK_MEANING_VERB: Meaning = {
   partOfSpeech: 'adjective',
-  definitions: [MOCK_DEFINITION_ADJECTIVE_1, MOCK_DEFINITION_ADJECTIVE_2],
-  synonyms: ['big', 'high', 'towering'],
-  antonyms: ['low', 'low-rise', 'short'],
+  definitions: [MOCK_DEFINITION_VERB],
+  synonyms: [],
+  antonyms: [],
 };
 
 export const MOCK_PRONUNCIATION: Pronunciation = {
-  text: '/tɔːl/',
-  audio: 'https://api.dictionaryapi.dev/media/pronunciations/en/tall-uk.mp3',
-  sourceUrl: 'https://commons.wikimedia.org/w/index.php?curid=9027510',
+  text: '/ˈkiːbɔːd/',
+  audio: 'https://api.dictionaryapi.dev/media/pronunciations/en/keyboard-us.mp3',
+  sourceUrl: 'https://commons.wikimedia.org/w/index.php?curid=1755168',
 };
 
 export const MOCK_RESULT_ENTRY: ResultEntry = {
-  meanings: [MOCK_MEANING_NOUN, MOCK_MEANING_ADJECTIVE],
-  phonetic: '/tɔːl/',
+  meanings: [MOCK_MEANING_NOUN, MOCK_MEANING_VERB],
+  phonetic: '/ˈkiːbɔːd/',
   phonetics: [MOCK_PRONUNCIATION],
-  sourceUrls: ['https://en.wiktionary.org/wiki/tall'],
-  word: 'tall',
+  sourceUrls: ['https://en.wiktionary.org/wiki/keyboard'],
+  word: 'keyboard',
 };
 
 export const MOCK_SUCCESS_RESPONSE: ApiResponse = [MOCK_RESULT_ENTRY];
