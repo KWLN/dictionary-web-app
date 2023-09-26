@@ -8,14 +8,15 @@ export const MOCK_DEFINITION_NOUN: Definition = {
 
 export const MOCK_DEFINITION_NOUN_2: Definition = {
   definition:
-    'A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.',
+    'A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device',
+  example: 'She plays keyboards and guitar.',
   synonyms: [],
   antonyms: [],
 };
 
 export const MOCK_DEFINITION_NOUN_3: Definition = {
   definition:
-    'A device with keys of a musical keyboard, used to control electronic sound-producing devices which may be built into or separate from the keyboard device',
+    'A component of many instruments including the piano, organ, and harpsichord consisting of usually black and white keys that cause different tones to be produced when struck.',
   synonyms: [],
   antonyms: [],
 };
