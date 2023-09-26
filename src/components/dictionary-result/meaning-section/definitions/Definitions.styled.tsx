@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import { typography } from '../../../../constants/tokens';
 
+export const Heading = styled.h3({
+  marginBottom: '24px',
+  color: '#757575',
+  ...typography.headingSmall,
+});
+
 export const List = styled.ul({
   listStyle: 'none',
   paddingLeft: '48px',
   paddingRight: '48px',
-
   ...typography.bodyMedium,
 });
 
