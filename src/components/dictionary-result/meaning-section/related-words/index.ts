@@ -1,0 +1,1 @@
+export { RelatedWords } from './RelatedWords';

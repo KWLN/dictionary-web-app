@@ -25,7 +25,7 @@ export const MOCK_MEANING_NOUN: Meaning = {
   partOfSpeech: 'noun',
   definitions: [MOCK_DEFINITION_NOUN, MOCK_DEFINITION_NOUN_2, MOCK_DEFINITION_NOUN_3],
   synonyms: ['electronic keyboard', 'piano'],
-  antonyms: [],
+  antonyms: ['placeholder word'],
 };
 
 export const MOCK_DEFINITION_VERB: Definition = {
