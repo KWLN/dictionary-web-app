@@ -12,8 +12,8 @@ export function DictionaryPage() {
       <PageHeader>
         <img src={LogoSvg} alt="" />
       </PageHeader>
+      <SearchBar onSearch={fetchDefinition} />
       <PageContent>
-        <SearchBar onSearch={fetchDefinition} />
         <DictionaryResult resultData={data} isLoading={loading} error={error} />
       </PageContent>
     </Page>
