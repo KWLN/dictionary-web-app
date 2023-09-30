@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { DictionaryResult } from './DictionaryResult';
+import { MOCK_SUCCESS_RESPONSE } from '../../services/dictionary-api/mocks';
 
 const meta: Meta<typeof DictionaryResult> = {
   component: DictionaryResult,
@@ -18,9 +19,8 @@ export default meta;
 
 type Story = StoryObj<typeof DictionaryResult>;
 
-// TODO: Success
 export const Default: Story = {
-  args: {},
+  args: { resultData: MOCK_SUCCESS_RESPONSE, isLoading: false, error: undefined },
 };
 
 // TODO: Loading
