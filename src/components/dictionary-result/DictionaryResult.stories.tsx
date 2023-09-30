@@ -23,7 +23,9 @@ export const Default: Story = {
   args: { resultData: MOCK_SUCCESS_RESPONSE, isLoading: false, error: undefined },
 };
 
-// TODO: Loading
+export const Loading: Story = {
+  args: { resultData: undefined, isLoading: true, error: undefined },
+};
 
 // TODO: No results
 

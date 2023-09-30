@@ -1,5 +1,5 @@
 import { ApiResponse, ResultEntry, isNoResultsFound } from '../../services/dictionary-api/types';
-import { Container } from './DictionaryResult.styled';
+import { Container, LoadingSpinner } from './DictionaryResult.styled';
 import { Footer } from './footer';
 import { Header } from './header';
 import { MeaningSection } from './meaning-section';
@@ -14,7 +14,7 @@ export function DictionaryResult(props: Props) {
   const { resultData, isLoading, error } = props;
 
   if (isLoading) {
-    return <div>TODO: Loading state</div>;
+    return <LoadingSpinner />;
   }
 
   if (error) {
