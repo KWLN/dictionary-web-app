@@ -27,6 +27,8 @@ export const Loading: Story = {
   args: { resultData: undefined, isLoading: true, error: undefined },
 };
 
-// TODO: No results
+export const EmptyState: Story = {
+  args: { resultData: undefined, isLoading: false, error: undefined },
+};
 
 // TODO: Error

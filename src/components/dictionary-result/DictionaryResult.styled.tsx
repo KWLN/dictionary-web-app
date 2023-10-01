@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
+import { typography } from '../../constants/tokens';
 
 export const Container = styled.div({
   '& > *:not(:last-child)': {
@@ -17,7 +18,7 @@ const rotation = keyframes({
 
 export const LoadingSpinner = styled.div(
   {
-    margin: '0 auto',
+    margin: '132px auto 0 auto',
     width: '48px',
     height: '48px',
     border: '5px solid #757575',
@@ -29,3 +30,19 @@ export const LoadingSpinner = styled.div(
     animation: ${rotation} 1s linear infinite;
   `
 );
+
+export const EmptyState = styled.div({
+  marginTop: '132px',
+  textAlign: 'center',
+});
+
+export const EmptyStateHeading = styled.p({
+  ...typography.headingSmall,
+  fontWeight: 700,
+});
+
+export const EmptyStateDescription = styled.p({
+  marginTop: '24px',
+  ...typography.bodyMedium,
+  color: '#757575',
+});

@@ -1,5 +1,11 @@
 import { ApiResponse, ResultEntry, isNoResultsFound } from '../../services/dictionary-api/types';
-import { Container, LoadingSpinner } from './DictionaryResult.styled';
+import {
+  Container,
+  EmptyState,
+  EmptyStateDescription,
+  EmptyStateHeading,
+  LoadingSpinner,
+} from './DictionaryResult.styled';
 import { Footer } from './footer';
 import { Header } from './header';
 import { MeaningSection } from './meaning-section';
@@ -22,7 +28,15 @@ export function DictionaryResult(props: Props) {
   }
 
   if (resultData === undefined || isNoResultsFound(resultData)) {
-    return <div>TODO: Empty state</div>;
+    return (
+      <EmptyState>
+        <EmptyStateHeading>No Definitions Found</EmptyStateHeading>
+        <EmptyStateDescription>
+          Sorry pal, we couldn&apos;t find definitions for the word you were looking for. You can
+          try the search again at a later time or head to the web instead.
+        </EmptyStateDescription>
+      </EmptyState>
+    );
   }
 
   // At this point we know that it has to be a successful API response.
