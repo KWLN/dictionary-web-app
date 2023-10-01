@@ -35,7 +35,12 @@ export function DictionaryResult(props: Props) {
     );
   }
 
-  if (resultData === undefined || isNoResultsFound(resultData)) {
+  // When not loading and there's no error, `resultData` is undefined when no search is made (e.g. on initial page load)
+  if (resultData == undefined) {
+    return null;
+  }
+
+  if (isNoResultsFound(resultData)) {
     return (
       <NoResultState>
         <NoResultStateHeading>No Definitions Found</NoResultStateHeading>
