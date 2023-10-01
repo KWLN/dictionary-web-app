@@ -31,4 +31,6 @@ export const EmptyState: Story = {
   args: { resultData: undefined, isLoading: false, error: undefined },
 };
 
-// TODO: Error
+export const ErrorState: Story = {
+  args: { resultData: undefined, isLoading: false, error: Error('Something went wrong') },
+};

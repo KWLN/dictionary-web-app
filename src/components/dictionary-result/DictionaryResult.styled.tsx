@@ -31,17 +31,17 @@ export const LoadingSpinner = styled.div(
   `
 );
 
-export const EmptyState = styled.div({
+export const NoResultState = styled.div({
   marginTop: '132px',
   textAlign: 'center',
 });
 
-export const EmptyStateHeading = styled.p({
+export const NoResultStateHeading = styled.p({
   ...typography.headingSmall,
   fontWeight: 700,
 });
 
-export const EmptyStateDescription = styled.p({
+export const NoResultStateDescription = styled.p({
   marginTop: '24px',
   ...typography.bodyMedium,
   color: '#757575',

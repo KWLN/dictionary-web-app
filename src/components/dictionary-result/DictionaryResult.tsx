@@ -1,10 +1,10 @@
 import { ApiResponse, ResultEntry, isNoResultsFound } from '../../services/dictionary-api/types';
 import {
   Container,
-  EmptyState,
-  EmptyStateDescription,
-  EmptyStateHeading,
   LoadingSpinner,
+  NoResultState,
+  NoResultStateDescription,
+  NoResultStateHeading,
 } from './DictionaryResult.styled';
 import { Footer } from './footer';
 import { Header } from './header';
@@ -24,18 +24,26 @@ export function DictionaryResult(props: Props) {
   }
 
   if (error) {
-    return <div>TODO: Error state</div>;
+    return (
+      <NoResultState>
+        <NoResultStateHeading>Something went wrong</NoResultStateHeading>
+        <NoResultStateDescription>
+          An error occurred while fetching definitions. You can try the search again or head to the
+          web instead.
+        </NoResultStateDescription>
+      </NoResultState>
+    );
   }
 
   if (resultData === undefined || isNoResultsFound(resultData)) {
     return (
-      <EmptyState>
-        <EmptyStateHeading>No Definitions Found</EmptyStateHeading>
-        <EmptyStateDescription>
+      <NoResultState>
+        <NoResultStateHeading>No Definitions Found</NoResultStateHeading>
+        <NoResultStateDescription>
           Sorry pal, we couldn&apos;t find definitions for the word you were looking for. You can
-          try the search again at a later time or head to the web instead.
-        </EmptyStateDescription>
-      </EmptyState>
+          try the search again or head to the web instead.
+        </NoResultStateDescription>
+      </NoResultState>
     );
   }
 
