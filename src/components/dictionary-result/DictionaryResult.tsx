@@ -51,6 +51,7 @@ export function DictionaryResult(props: Props) {
       </NoResultState>
     );
   }
+  console.log({ resultData });
 
   // At this point we know that it has to be a successful API response.
   // TypeScript can't figure this out on its own so we need to cast it.

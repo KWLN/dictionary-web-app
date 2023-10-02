@@ -13,6 +13,8 @@ export function Header(props: Props) {
 
   // TODO: Find first phonetic that has `audio`,
   // otherwise disable or hide button if there is no `audio` at all.
+  // `pronunciation` can be undefined if `phonetics` is empty array.
+  // Currently, this causes the app to blow up with an error.
   const pronunciation = phonetics[0];
   const [play] = useSound(pronunciation.audio);
 

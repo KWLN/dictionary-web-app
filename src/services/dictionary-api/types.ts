@@ -22,7 +22,7 @@ export type Pronunciation = {
 
 export type ResultEntry = {
   meanings: Meaning[];
-  phonetic: string;
+  phonetic?: string;
   phonetics: Pronunciation[];
   sourceUrls: string[];
   word: string;
