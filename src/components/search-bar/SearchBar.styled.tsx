@@ -11,7 +11,7 @@ export const InputWrapper = styled.div({
   position: 'relative',
 });
 
-export const Input = styled.input<{ isInvalid: boolean }>((props) => ({
+export const Input = styled.input<{ $isInvalid: boolean }>((props) => ({
   boxSizing: 'border-box',
   border: 'none',
   borderRadius: '16px',
@@ -26,10 +26,10 @@ export const Input = styled.input<{ isInvalid: boolean }>((props) => ({
   ...typography.headingSmall,
   fontWeight: 700,
 
-  outline: props.isInvalid ? '1px solid #FF5252' : 'none',
+  outline: props.$isInvalid ? '1px solid #FF5252' : 'none',
 
   '&:active, &:focus': {
-    outline: `1px solid ${props.isInvalid ? '#FF5252' : '#A445ED'}`,
+    outline: `1px solid ${props.$isInvalid ? '#FF5252' : '#A445ED'}`,
   },
 
   '&::placeholder': {

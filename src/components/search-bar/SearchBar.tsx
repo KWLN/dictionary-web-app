@@ -42,7 +42,7 @@ export function SearchBar(props: Props) {
           placeholder="Search for any word..."
           value={inputValue}
           onChange={handleInputChange}
-          isInvalid={!!inputError}
+          $isInvalid={!!inputError}
         />
       </InputWrapper>
       {inputError && <ErrorMessage error={inputError} />}
