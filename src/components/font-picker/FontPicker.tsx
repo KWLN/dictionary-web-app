@@ -1,14 +1,22 @@
 import Select from 'react-select';
 import { FontFamilyOption } from './types';
+import { fontFamilyPickerStyles } from './FontPicker.styled';
 
 const fontFamilyOptions: FontFamilyOption[] = [
-  { value: 'sans-serif', label: 'Sans Serif' },
-  { value: 'serif', label: 'Serif' },
-  { value: 'mono', label: 'Mono' },
+  { value: 'Inter', label: 'Sans Serif' },
+  { value: 'Lora', label: 'Serif' },
+  { value: 'Inconsolata', label: 'Mono' },
 ];
 
 export function FontPicker() {
   return (
-    <Select<FontFamilyOption> options={fontFamilyOptions} defaultValue={fontFamilyOptions[0]} />
+    <Select<FontFamilyOption>
+      aria-label="Font family"
+      options={fontFamilyOptions}
+      defaultValue={fontFamilyOptions[0]}
+      isSearchable={false}
+      unstyled
+      styles={fontFamilyPickerStyles}
+    />
   );
 }

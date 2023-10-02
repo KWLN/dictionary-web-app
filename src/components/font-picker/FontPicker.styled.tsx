@@ -1,8 +1,47 @@
-import styled from 'styled-components';
+import { StylesConfig } from 'react-select';
+import { FontFamilyOption } from './types';
+import { typography } from '../../constants/tokens';
 
-export const FontFamilySelect = styled.select({
-  border: 'none',
-  cursor: 'pointer',
-});
-
-export const FontFamilyOption = styled.option({});
+export const fontFamilyPickerStyles: StylesConfig<FontFamilyOption> = {
+  control: (baseStyles) => ({
+    ...baseStyles,
+    cursor: 'pointer',
+    width: 'fit-content',
+  }),
+  dropdownIndicator: (baseStyles) => ({
+    ...baseStyles,
+    marginLeft: '16px',
+    color: '#A445ED',
+  }),
+  menu: (baseStyles) => ({
+    ...baseStyles,
+    minWidth: '184px',
+    width: 'fit-content',
+    background: '#FFFFFF',
+    borderRadius: '16px',
+    boxShadow: '0px 5px 30px 0px rgba(0, 0, 0, 0.10)',
+  }),
+  menuList: (baseStyles) => ({
+    ...baseStyles,
+    paddingTop: '16px',
+    paddingBottom: '16px',
+  }),
+  option: (baseStyles, props) => ({
+    ...baseStyles,
+    ...typography.bodyMedium,
+    fontWeight: 700,
+    cursor: 'pointer',
+    paddingTop: '8px',
+    paddingBottom: '8px',
+    paddingLeft: '24px',
+    paddingRight: '24px',
+    color: props.isSelected ? '#A445ED' : 'inherit',
+    fontFamily: props.data.value,
+  }),
+  singleValue: (baseStyles, props) => ({
+    ...baseStyles,
+    ...typography.bodyMedium,
+    fontWeight: 700,
+    fontFamily: props.data.value,
+  }),
+};
