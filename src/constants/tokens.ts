@@ -1,5 +1,19 @@
-// TODO: Add typing
-export const colors = {
+type Colors = {
+  accent: string;
+  background: string;
+  divider: string;
+  error: string;
+  input: string;
+  textPrimary: string;
+  textSecondary: string;
+};
+
+type ColorTokens = {
+  light: Colors;
+  dark: Colors;
+};
+
+export const colors: ColorTokens = {
   light: {
     accent: '#A445ED',
     background: '#FFFFFF',
