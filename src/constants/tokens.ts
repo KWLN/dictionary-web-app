@@ -34,8 +34,21 @@ export const colors: ColorTokens = {
   },
 };
 
-// TODO: Add typing
-export const typography = {
+type TypographyStyles = {
+  fontSize: string;
+  fontWeight: number;
+  lineHeight: string;
+};
+
+type TypographyTokens = {
+  headingLarge: TypographyStyles;
+  headingMedium: TypographyStyles;
+  headingSmall: TypographyStyles;
+  bodyMedium: TypographyStyles;
+  bodySmall: TypographyStyles;
+};
+
+export const typography: TypographyTokens = {
   headingLarge: {
     fontSize: '64px',
     fontWeight: 700,
