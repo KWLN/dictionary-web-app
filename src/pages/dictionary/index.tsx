@@ -1,7 +1,7 @@
 import { DictionaryResult } from '../../components/dictionary-result/DictionaryResult';
 import { SearchBar } from '../../components/search-bar';
 import { useSearchDictionaryApi } from '../../services/dictionary-api';
-import { Page, PageContent, PageHeader } from './styled';
+import { Controls, Logo, Page, PageContent, PageHeader } from './styled';
 import LogoSvg from '../../assets/images/logo.svg';
 import { FontPicker } from '../../components/font-picker';
 import { FontFamily } from '../../global';
@@ -18,8 +18,10 @@ export function DictionaryPage(props: Props) {
   return (
     <Page>
       <PageHeader>
-        <img src={LogoSvg} alt="" />
-        <FontPicker setFontFamily={setFontFamily} />
+        <Logo src={LogoSvg} alt="" />
+        <Controls>
+          <FontPicker setFontFamily={setFontFamily} />
+        </Controls>
       </PageHeader>
       <SearchBar onSearch={fetchDefinition} />
       <PageContent>
