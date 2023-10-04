@@ -1,3 +1,26 @@
+// TODO: Add typing
+export const colors = {
+  light: {
+    accent: '#A445ED',
+    background: '#FFFFFF',
+    divider: '#E9E9E9',
+    error: '#FF5252',
+    input: '#F4F4F4',
+    textPrimary: '#2D2D2D',
+    textSecondary: '#757575',
+  },
+  dark: {
+    accent: '#A445ED',
+    background: '#050505',
+    divider: '#3A3A3A',
+    error: '#FF5252',
+    input: '#1F1F1F',
+    textPrimary: '#FFFFFF',
+    textSecondary: '#757575',
+  },
+};
+
+// TODO: Add typing
 export const typography = {
   headingLarge: {
     fontSize: '64px',
