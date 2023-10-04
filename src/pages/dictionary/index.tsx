@@ -4,7 +4,7 @@ import { useSearchDictionaryApi } from '../../services/dictionary-api';
 import { Page, PageContent, PageHeader } from './styled';
 import LogoSvg from '../../assets/images/logo.svg';
 import { FontPicker } from '../../components/font-picker';
-import { FontFamily } from '../../types';
+import { FontFamily } from '../../global';
 
 type Props = {
   setFontFamily: (fontFamily: FontFamily) => void;

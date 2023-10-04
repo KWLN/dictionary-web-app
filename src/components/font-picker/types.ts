@@ -1,4 +1,4 @@
-import { FontFamily } from '../../types';
+import { FontFamily } from '../../global';
 
 export type FontFamilyOption = {
   label: string;

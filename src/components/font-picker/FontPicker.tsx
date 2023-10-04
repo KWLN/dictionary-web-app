@@ -1,7 +1,7 @@
 import Select from 'react-select';
 import { FontFamilyOption } from './types';
 import { fontFamilyPickerStyles } from './FontPicker.styled';
-import { FontFamily } from '../../types';
+import { FontFamily } from '../../global';
 
 const fontFamilyOptions: FontFamilyOption[] = [
   { value: 'Inter', label: 'Sans Serif' },
