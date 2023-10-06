@@ -1,10 +1,11 @@
 import { DictionaryResult } from '../../components/dictionary-result/DictionaryResult';
 import { SearchBar } from '../../components/search-bar';
 import { useSearchDictionaryApi } from '../../services/dictionary-api';
-import { Controls, Logo, Page, PageContent, PageHeader } from './styled';
+import { Controls, Divider, Logo, Page, PageContent, PageHeader } from './styled';
 import LogoSvg from '../../assets/images/logo.svg';
 import { FontPicker } from '../../components/font-picker';
 import { FontFamily } from '../../global';
+import { DarkModeToggle } from '../../components/dark-mode-toggle';
 
 type Props = {
   setFontFamily: (fontFamily: FontFamily) => void;
@@ -21,6 +22,8 @@ export function DictionaryPage(props: Props) {
         <Logo src={LogoSvg} alt="" />
         <Controls>
           <FontPicker setFontFamily={setFontFamily} />
+          <Divider />
+          <DarkModeToggle />
         </Controls>
       </PageHeader>
       <SearchBar onSearch={fetchDefinition} />

@@ -18,4 +18,12 @@ export const Controls = styled.div({
   flexDirection: 'row',
 });
 
+export const Divider = styled.hr({
+  margin: '0 26px',
+  height: '100%',
+  width: '1px',
+  border: 0,
+  background: '#E9E9E9',
+});
+
 export const PageContent = styled.div({ marginTop: '48px' });
