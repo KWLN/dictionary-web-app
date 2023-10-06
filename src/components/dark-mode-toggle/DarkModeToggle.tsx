@@ -1,21 +1,25 @@
-import { useState } from 'react';
 import { ReactSVG } from 'react-svg';
 import { Container, Icon, ToggleButton, ToggleDisplay } from './DarkModeToggle.styled';
 import MoonSvg from './assets/icon-moon.svg';
+import { useTheme } from 'styled-components';
 
-export function DarkModeToggle() {
-  const [isDarkModeEnabled, setIsDarkModeEnabled] = useState<boolean>(false);
+type Props = {
+  toggleColorMode: () => void;
+};
 
-  const toggleDarkMode = () => {
-    setIsDarkModeEnabled((prev) => !prev);
-  };
+export function DarkModeToggle(props: Props) {
+  const { toggleColorMode } = props;
+
+  const { colorMode } = useTheme();
+
+  const isDarkModeEnabled = colorMode === 'dark';
 
   return (
     <Container>
       <ToggleButton
         aria-label="Enable dark mode"
         aria-pressed={isDarkModeEnabled}
-        onClick={toggleDarkMode}
+        onClick={toggleColorMode}
       >
         <ToggleDisplay isDarkModeEnabled={isDarkModeEnabled} />
       </ToggleButton>

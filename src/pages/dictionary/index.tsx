@@ -9,10 +9,11 @@ import { DarkModeToggle } from '../../components/dark-mode-toggle';
 
 type Props = {
   setFontFamily: (fontFamily: FontFamily) => void;
+  toggleColorMode: () => void;
 };
 
 export function DictionaryPage(props: Props) {
-  const { setFontFamily } = props;
+  const { toggleColorMode, setFontFamily } = props;
 
   const { fetchDefinition, data, loading, error } = useSearchDictionaryApi();
 
@@ -23,7 +24,7 @@ export function DictionaryPage(props: Props) {
         <Controls>
           <FontPicker setFontFamily={setFontFamily} />
           <Divider />
-          <DarkModeToggle />
+          <DarkModeToggle toggleColorMode={toggleColorMode} />
         </Controls>
       </PageHeader>
       <SearchBar onSearch={fetchDefinition} />

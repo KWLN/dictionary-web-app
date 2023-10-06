@@ -11,10 +11,18 @@ function App() {
     setTheme((prev) => ({ ...prev, fontFamily }));
   };
 
+  const toggleColorMode = () => {
+    if (theme.colorMode === 'light') {
+      setTheme((prev) => ({ ...prev, colorMode: 'dark' }));
+    } else {
+      setTheme((prev) => ({ ...prev, colorMode: 'light' }));
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <DictionaryPage setFontFamily={setFontFamily} />
+      <DictionaryPage setFontFamily={setFontFamily} toggleColorMode={toggleColorMode} />
     </ThemeProvider>
   );
 }
