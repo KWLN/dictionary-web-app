@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Container, ToggleButton, ToggleDisplay } from './DarkModeToggle.styled';
+import { ReactSVG } from 'react-svg';
+import { Container, Icon, ToggleButton, ToggleDisplay } from './DarkModeToggle.styled';
+import MoonSvg from './assets/icon-moon.svg';
 
 export function DarkModeToggle() {
   const [isDarkModeEnabled, setIsDarkModeEnabled] = useState<boolean>(false);
@@ -17,6 +19,9 @@ export function DarkModeToggle() {
       >
         <ToggleDisplay isDarkModeEnabled={isDarkModeEnabled} />
       </ToggleButton>
+      <Icon isDarkModeEnabled={isDarkModeEnabled}>
+        <ReactSVG src={MoonSvg} />
+      </Icon>
     </Container>
   );
 }

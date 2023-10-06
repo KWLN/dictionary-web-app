@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // The "handle" is the circular knob on the toggle that moves between the on/off states
-const TOGGLE_HANDLE_DIAMETER = '20px';
+const TOGGLE_HANDLE_DIAMETER = '16px';
 const TOGGLE_PADDING = '3px';
 
 export const Container = styled.div({
@@ -23,8 +23,6 @@ export const ToggleDisplay = styled.span<{ isDarkModeEnabled: boolean }>((props)
 
   height: `calc(${TOGGLE_HANDLE_DIAMETER} + ${TOGGLE_PADDING} * 2)`,
   width: `calc(${TOGGLE_HANDLE_DIAMETER} * 2 + ${TOGGLE_PADDING} * 2)`,
-  boxSizing: 'content-box',
-
   position: 'relative',
   borderRadius: '100vh',
   backgroundColor: props.isDarkModeEnabled ? '#A445ED' : '#757575',
@@ -47,5 +45,15 @@ export const ToggleDisplay = styled.span<{ isDarkModeEnabled: boolean }>((props)
 
     backgroundColor: '#FFFFFF',
     transition: 'inherit',
+  },
+}));
+
+export const Icon = styled.div<{ isDarkModeEnabled: boolean }>((props) => ({
+  marginLeft: '20px',
+  height: '22px',
+  width: '22px',
+
+  '& path': {
+    stroke: props.isDarkModeEnabled ? '#A445ED' : '#757575',
   },
 }));
