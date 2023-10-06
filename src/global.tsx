@@ -1,10 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
+import { ColorTokens } from './constants/tokens';
 
 export type ColorMode = 'light' | 'dark';
 export type FontFamily = 'Inconsolata' | 'Inter' | 'Lora';
 
 export type Theme = {
   colorMode: ColorMode;
+  colors: ColorTokens['light'] | ColorTokens['dark'];
   fontFamily: FontFamily;
 };
 
@@ -16,6 +18,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: ${({ theme }) => theme.fontFamily}, sans-serif;
+    background-color: ${({ theme }) => theme.colors.background};
     color: #2d2d2d;
   }
 

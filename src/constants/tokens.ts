@@ -8,12 +8,12 @@ type Colors = {
   textSecondary: string;
 };
 
-type ColorTokens = {
+export type ColorTokens = {
   light: Colors;
   dark: Colors;
 };
 
-export const colors: ColorTokens = {
+export const colorThemes: ColorTokens = {
   light: {
     accent: '#A445ED',
     background: '#FFFFFF',
