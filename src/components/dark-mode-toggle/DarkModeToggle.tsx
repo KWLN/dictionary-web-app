@@ -21,9 +21,9 @@ export function DarkModeToggle(props: Props) {
         aria-pressed={isDarkModeEnabled}
         onClick={toggleColorMode}
       >
-        <ToggleDisplay isDarkModeEnabled={isDarkModeEnabled} />
+        <ToggleDisplay $isDarkModeEnabled={isDarkModeEnabled} />
       </ToggleButton>
-      <Icon isDarkModeEnabled={isDarkModeEnabled}>
+      <Icon $isDarkModeEnabled={isDarkModeEnabled}>
         <ReactSVG src={MoonSvg} />
       </Icon>
     </Container>

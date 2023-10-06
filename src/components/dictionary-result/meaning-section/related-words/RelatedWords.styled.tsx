@@ -7,11 +7,11 @@ export const Container = styled.div({
   width: '100%',
 });
 
-export const Heading = styled.h3({
-  color: '#757575',
+export const Heading = styled.h3((props) => ({
+  color: props.theme.colors.textSecondary,
   ...typography.headingSmall,
   flex: '1 1 0',
-});
+}));
 
 export const WordList = styled.ul({
   marginLeft: '22px',
@@ -19,11 +19,11 @@ export const WordList = styled.ul({
   flex: '6 6 0',
 });
 
-export const WordListItem = styled.li({
+export const WordListItem = styled.li((props) => ({
   display: 'inline-block',
   ...typography.headingSmall,
   fontWeight: 700,
-  color: '#A445ED',
+  color: props.theme.colors.accent,
 
   '&:not(:last-of-type)': {
     marginRight: '4px',
@@ -31,6 +31,6 @@ export const WordListItem = styled.li({
 
   '&:not(:last-of-type)::after': {
     content: '", "',
-    color: '#757575',
+    color: props.theme.colors.textSecondary,
   },
-});
+}));

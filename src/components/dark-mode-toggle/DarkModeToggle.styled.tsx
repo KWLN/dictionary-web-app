@@ -16,7 +16,7 @@ export const ToggleButton = styled.button({
 });
 
 // Implementation inspired by https://kittygiraudel.com/2021/04/05/an-accessible-toggle/#button-variant
-export const ToggleDisplay = styled.span<{ isDarkModeEnabled: boolean }>((props) => ({
+export const ToggleDisplay = styled.span<{ $isDarkModeEnabled: boolean }>((props) => ({
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'space-around',
@@ -25,7 +25,7 @@ export const ToggleDisplay = styled.span<{ isDarkModeEnabled: boolean }>((props)
   width: `calc(${TOGGLE_HANDLE_DIAMETER} * 2 + ${TOGGLE_PADDING} * 2)`,
   position: 'relative',
   borderRadius: '100vh',
-  backgroundColor: props.isDarkModeEnabled ? '#A445ED' : '#757575',
+  backgroundColor: props.$isDarkModeEnabled ? '#A445ED' : '#757575',
 
   cursor: 'pointer',
   transitionDuration: '250ms',
@@ -41,14 +41,15 @@ export const ToggleDisplay = styled.span<{ isDarkModeEnabled: boolean }>((props)
     zIndex: '2',
     top: '50%',
     left: TOGGLE_PADDING,
-    transform: props.isDarkModeEnabled ? 'translate(100%, -50%)' : 'translate(0, -50%)',
-
-    backgroundColor: '#FFFFFF',
+    transform: props.$isDarkModeEnabled ? 'translate(100%, -50%)' : 'translate(0, -50%)',
     transition: 'inherit',
+
+    // The handle/knob should always be white. Don't use `theme.color.background` token for this.
+    backgroundColor: '#FFFFFF',
   },
 }));
 
-export const Icon = styled.div<{ isDarkModeEnabled: boolean }>((props) => ({
+export const Icon = styled.div<{ $isDarkModeEnabled: boolean }>((props) => ({
   marginLeft: '20px',
   display: 'flex',
   alignSelf: 'center',
@@ -56,6 +57,6 @@ export const Icon = styled.div<{ isDarkModeEnabled: boolean }>((props) => ({
   width: '22px',
 
   '& path': {
-    stroke: props.isDarkModeEnabled ? '#A445ED' : '#757575',
+    stroke: props.$isDarkModeEnabled ? '#A445ED' : '#757575',
   },
 }));

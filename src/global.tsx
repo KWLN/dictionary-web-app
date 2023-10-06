@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: ${({ theme }) => theme.fontFamily}, sans-serif;
     background-color: ${({ theme }) => theme.colors.background};
-    color: #2d2d2d;
+    color: ${({ theme }) => theme.colors.textPrimary};
   }
 
   button {

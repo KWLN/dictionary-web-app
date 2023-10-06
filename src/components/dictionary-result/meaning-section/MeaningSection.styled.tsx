@@ -17,12 +17,12 @@ export const PartOfSpeech = styled.h2({
   fontStyle: 'italic',
 });
 
-export const Divider = styled.hr({
+export const Divider = styled.hr((props) => ({
   marginLeft: '20px',
   display: 'flex',
   alignSelf: 'center',
   height: '1px',
   width: '100%',
   border: 0,
-  background: '#E9E9E9',
-});
+  background: props.theme.colors.divider,
+}));

@@ -17,15 +17,15 @@ const rotation = keyframes({
 });
 
 export const LoadingSpinner = styled.div(
-  {
+  (props) => ({
     margin: '132px auto 0 auto',
     width: '48px',
     height: '48px',
-    border: '5px solid #757575',
+    border: `5px solid ${props.theme.colors.textSecondary}`,
     borderBottomColor: 'transparent',
     borderRadius: '50%',
     boxSizing: 'border-box',
-  },
+  }),
   css`
     animation: ${rotation} 1s linear infinite;
   `
@@ -41,8 +41,8 @@ export const NoResultStateHeading = styled.p({
   fontWeight: 700,
 });
 
-export const NoResultStateDescription = styled.p({
+export const NoResultStateDescription = styled.p((props) => ({
   marginTop: '24px',
   ...typography.bodyMedium,
-  color: '#757575',
-});
+  color: props.theme.colors.textSecondary,
+}));

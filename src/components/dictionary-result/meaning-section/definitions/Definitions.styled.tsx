@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { typography } from '../../../../constants/tokens';
 
-export const Heading = styled.h3({
+export const Heading = styled.h3((props) => ({
   marginBottom: '24px',
-  color: '#757575',
+  color: props.theme.colors.textSecondary,
   ...typography.headingSmall,
-});
+}));
 
 export const List = styled.ul({
   listStyle: 'none',
@@ -29,7 +29,7 @@ export const ListItem = styled.li({
 
 export const DefinitionRow = styled.p({});
 
-export const ExampleRow = styled.p({
+export const ExampleRow = styled.p((props) => ({
   marginTop: '12px',
-  color: '#757575',
-});
+  color: props.theme.colors.textSecondary,
+}));

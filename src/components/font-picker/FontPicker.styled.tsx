@@ -2,7 +2,11 @@ import { StylesConfig } from 'react-select';
 import { FontFamilyOption } from './types';
 import { typography } from '../../constants/tokens';
 
-export const fontFamilyPickerStyles: StylesConfig<FontFamilyOption> = {
+export const fontFamilyPickerStyles = ({
+  isDarkModeEnabled,
+}: {
+  isDarkModeEnabled: boolean;
+}): StylesConfig<FontFamilyOption> => ({
   control: (baseStyles) => ({
     ...baseStyles,
     cursor: 'pointer',
@@ -17,7 +21,8 @@ export const fontFamilyPickerStyles: StylesConfig<FontFamilyOption> = {
     ...baseStyles,
     minWidth: '184px',
     width: 'fit-content',
-    background: '#FFFFFF',
+    // We can't use `theme.color.background` here since the dark mode background color is different
+    background: isDarkModeEnabled ? '#1F1F1F' : '#FFFFFF',
     borderRadius: '16px',
     boxShadow: '0px 5px 30px 0px rgba(0, 0, 0, 0.10)',
   }),
@@ -44,4 +49,4 @@ export const fontFamilyPickerStyles: StylesConfig<FontFamilyOption> = {
     fontWeight: 700,
     fontFamily: props.data.value,
   }),
-};
+});

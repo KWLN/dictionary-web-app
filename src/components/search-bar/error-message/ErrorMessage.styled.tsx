@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { typography } from '../../../constants/tokens';
 
-export const Message = styled.p({
+export const Message = styled.p((props) => ({
   ...typography.headingSmall,
   margin: 0,
-  color: '#FF5252',
-});
+  color: props.theme.colors.error,
+}));

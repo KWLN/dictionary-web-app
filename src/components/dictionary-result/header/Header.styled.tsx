@@ -18,10 +18,10 @@ export const Word = styled.h1({
   ...typography.headingLarge,
 });
 
-export const Phonetic = styled.p({
+export const Phonetic = styled.p((props) => ({
   ...typography.headingMedium,
-  color: '#A445ED',
-});
+  color: props.theme.colors.accent,
+}));
 
 export const PronunciationButton = styled.button({
   alignSelf: 'center',

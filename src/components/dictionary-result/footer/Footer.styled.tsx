@@ -6,14 +6,14 @@ export const Container = styled.footer({
   ...typography.bodySmall,
 });
 
-export const Divider = styled.hr({
+export const Divider = styled.hr((props) => ({
   display: 'flex',
   alignSelf: 'center',
   height: '1px',
   width: '100%',
   border: 0,
-  background: '#E9E9E9',
-});
+  background: props.theme.colors.divider,
+}));
 
 export const Source = styled.div({
   marginTop: '20px',
@@ -21,15 +21,15 @@ export const Source = styled.div({
   flexDirection: 'row',
 });
 
-export const Label = styled.p({
-  color: '#757575',
+export const Label = styled.p((props) => ({
+  color: props.theme.colors.textSecondary,
   textDecoration: 'underline',
   textUnderlineOffset: '3px',
-});
+}));
 
-export const SourceUrl = styled.a({
+export const SourceUrl = styled.a((props) => ({
   marginLeft: '20px',
-  color: '#2D2D2D',
+  color: props.theme.colors.textPrimary,
   textDecoration: 'underline',
   textUnderlineOffset: '3px',
 
@@ -37,4 +37,4 @@ export const SourceUrl = styled.a({
     marginLeft: '8px',
     content: `url(${NewWindowIcon})`,
   },
-});
+}));

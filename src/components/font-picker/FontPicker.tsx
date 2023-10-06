@@ -2,6 +2,7 @@ import Select from 'react-select';
 import { FontFamilyOption } from './types';
 import { fontFamilyPickerStyles } from './FontPicker.styled';
 import { FontFamily } from '../../global';
+import { useTheme } from 'styled-components';
 
 const fontFamilyOptions: FontFamilyOption[] = [
   { value: 'Inter', label: 'Sans Serif' },
@@ -15,6 +16,9 @@ type Props = {
 
 export function FontPicker(props: Props) {
   const { setFontFamily } = props;
+
+  const { colorMode } = useTheme();
+  const isDarkModeEnabled = colorMode === 'dark';
 
   const handleOptionChange = (newOption: FontFamilyOption | null) => {
     if (newOption) {
@@ -34,7 +38,7 @@ export function FontPicker(props: Props) {
       isSearchable={false}
       onChange={handleOptionChange}
       unstyled
-      styles={fontFamilyPickerStyles}
+      styles={fontFamilyPickerStyles({ isDarkModeEnabled })}
     />
   );
 }
