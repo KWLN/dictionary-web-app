@@ -50,6 +50,8 @@ export const ToggleDisplay = styled.span<{ isDarkModeEnabled: boolean }>((props)
 
 export const Icon = styled.div<{ isDarkModeEnabled: boolean }>((props) => ({
   marginLeft: '20px',
+  display: 'flex',
+  alignSelf: 'center',
   height: '22px',
   width: '22px',
 
