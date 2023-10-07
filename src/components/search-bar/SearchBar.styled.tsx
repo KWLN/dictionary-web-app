@@ -24,6 +24,7 @@ export const Input = styled.input<{ $isInvalid: boolean }>((props) => ({
   background: props.theme.colors.input,
 
   ...typography.headingSmall,
+  fontFamily: props.theme.fontFamily,
   fontWeight: 700,
   color: props.theme.colors.textPrimary,
 
