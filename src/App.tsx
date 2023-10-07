@@ -4,13 +4,13 @@ import { FontFamily, GlobalStyles, Theme } from './global';
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 import { colorThemes } from './constants/tokens';
-import { useMediaQuery } from 'usehooks-ts';
+import { useDarkMode } from 'usehooks-ts';
 
 function App() {
-  const isDarkPreferredByOS = useMediaQuery('(prefers-color-scheme: dark)');
+  const { isDarkMode, toggle: toggleDarkMode } = useDarkMode();
   const [theme, setTheme] = useState<Theme>({
-    colorMode: isDarkPreferredByOS ? 'dark' : 'light',
-    colors: isDarkPreferredByOS ? colorThemes.dark : colorThemes.light,
+    colorMode: isDarkMode ? 'dark' : 'light',
+    colors: isDarkMode ? colorThemes.dark : colorThemes.light,
     fontFamily: 'Inter',
   });
 
@@ -19,11 +19,13 @@ function App() {
   };
 
   const toggleColorMode = () => {
-    if (theme.colorMode === 'light') {
-      setTheme((prev) => ({ ...prev, colorMode: 'dark', colors: colorThemes.dark }));
-    } else {
+    if (isDarkMode) {
       setTheme((prev) => ({ ...prev, colorMode: 'light', colors: colorThemes.light }));
+    } else {
+      setTheme((prev) => ({ ...prev, colorMode: 'dark', colors: colorThemes.dark }));
     }
+
+    toggleDarkMode();
   };
 
   return (
