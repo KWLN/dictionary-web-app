@@ -17,8 +17,9 @@ type Props = {
 export function FontPicker(props: Props) {
   const { setFontFamily } = props;
 
-  const { colorMode } = useTheme();
+  const { colorMode, fontFamily } = useTheme();
   const isDarkModeEnabled = colorMode === 'dark';
+  const selectedFontFamily = fontFamilyOptions.find((option) => option.value === fontFamily);
 
   const handleOptionChange = (newOption: FontFamilyOption | null) => {
     if (newOption) {
@@ -33,7 +34,7 @@ export function FontPicker(props: Props) {
     <Select<FontFamilyOption>
       aria-label="Font family"
       options={fontFamilyOptions}
-      defaultValue={fontFamilyOptions[0]}
+      value={selectedFontFamily}
       isClearable={false}
       isSearchable={false}
       onChange={handleOptionChange}

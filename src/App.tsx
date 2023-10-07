@@ -4,17 +4,22 @@ import { FontFamily, GlobalStyles, Theme } from './global';
 import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 import { colorThemes } from './constants/tokens';
-import { useDarkMode } from 'usehooks-ts';
+import { useDarkMode, useLocalStorage } from 'usehooks-ts';
 
 function App() {
   const { isDarkMode, toggle: toggleDarkMode } = useDarkMode();
+  const [userFontFamilyPreference, setUserFontFamilyPreference] = useLocalStorage<FontFamily>(
+    'dictionary-app-font-family-preference',
+    'Inter'
+  );
   const [theme, setTheme] = useState<Theme>({
     colorMode: isDarkMode ? 'dark' : 'light',
     colors: isDarkMode ? colorThemes.dark : colorThemes.light,
-    fontFamily: 'Inter',
+    fontFamily: userFontFamilyPreference,
   });
 
   const setFontFamily = (fontFamily: FontFamily) => {
+    setUserFontFamilyPreference(fontFamily);
     setTheme((prev) => ({ ...prev, fontFamily }));
   };
 
