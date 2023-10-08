@@ -4,11 +4,15 @@ import '../src/App.css';
 
 import { GlobalStyles } from '../src/global';
 import { ThemeProvider } from 'styled-components';
+import { colorThemes } from '../src/constants/tokens';
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <ThemeProvider theme={{ colorMode: 'light', fontFamily: 'Inter' }}>
+      // FIXME: Some stories (e.g. `DarkModeToggle` and `FontPicker`) do not work because the theme state doesn't update.
+      // Look for another solution to get the theming working with Storybook.
+      // https://storybook.js.org/recipes/styled-components is one option but having trouble with types in particular.
+      <ThemeProvider theme={{ colorMode: 'light', colors: colorThemes.light, fontFamily: 'Inter' }}>
         <GlobalStyles />
         <Story />
       </ThemeProvider>
