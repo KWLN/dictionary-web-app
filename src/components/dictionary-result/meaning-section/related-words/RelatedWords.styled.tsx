@@ -24,6 +24,7 @@ export const WordListItem = styled.li((props) => ({
   ...typography.headingSmall,
   fontWeight: 700,
   color: props.theme.colors.accent,
+  cursor: 'pointer',
 
   '&:not(:last-of-type)': {
     marginRight: '4px',
