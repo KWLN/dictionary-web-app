@@ -44,7 +44,7 @@ export const ToggleDisplay = styled.span<{ $isDarkModeEnabled: boolean }>((props
     transform: props.$isDarkModeEnabled ? 'translate(100%, -50%)' : 'translate(0, -50%)',
     transition: 'inherit',
 
-    // The handle/knob should always be white. Don't use `theme.color.background` token for this.
+    // The handle/knob should always be white. Don't use `theme.colors.background` token for this.
     backgroundColor: '#FFFFFF',
   },
 }));

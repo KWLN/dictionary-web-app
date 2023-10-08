@@ -21,7 +21,7 @@ export const fontFamilyPickerStyles = ({
     ...baseStyles,
     minWidth: '184px',
     width: 'fit-content',
-    // We can't use `theme.color.background` here since the dark mode background color is different
+    // We can't use `theme.colors.background` here since the dark mode background color is different
     background: isDarkModeEnabled ? '#1F1F1F' : '#FFFFFF',
     borderRadius: '16px',
     boxShadow: '0px 5px 30px 0px rgba(0, 0, 0, 0.10)',
