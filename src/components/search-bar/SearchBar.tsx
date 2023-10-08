@@ -3,23 +3,26 @@ import { FieldContainer, Icon, Input, InputWrapper } from './SearchBar.styled';
 import SearchIcon from './assets/icon-search.svg';
 import { ErrorMessage, type InputError } from './error-message';
 import { useDebounce } from 'usehooks-ts';
+import { useWordContext } from '../../context/word-context';
 
-type Props = {
-  /** Callback that handles the fetching of data */
-  onSearch: (inputValue: string) => void;
-};
-
-export function SearchBar(props: Props) {
-  const { onSearch } = props;
-
+export function SearchBar() {
+  const { currentWord, setCurrentWord } = useWordContext();
   const [inputValue, setInputValue] = useState<string>('');
   const [inputError, setInputError] = useState<InputError | null>(null);
 
   const debouncedInputValue = useDebounce(inputValue, 500);
 
   useEffect(() => {
-    onSearch(debouncedInputValue);
-  }, [debouncedInputValue, onSearch]);
+    // There's a `useEffect` at the page level that listens for changes
+    // to the current word and triggers a definition search.
+    setCurrentWord(debouncedInputValue);
+  }, [debouncedInputValue, setCurrentWord]);
+
+  useEffect(() => {
+    // If the current word changes outside of the search bar (e.g. user clicks on a related word),
+    // the search input value should be updated to match the new current word.
+    setInputValue(currentWord);
+  }, [currentWord]);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();

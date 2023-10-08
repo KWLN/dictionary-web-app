@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
 import { colorThemes } from './constants/tokens';
 import { useDarkMode, useLocalStorage } from 'usehooks-ts';
+import { WordContextProvider } from './context/word-context';
 
 function App() {
   const { isDarkMode, toggle: toggleDarkMode } = useDarkMode();
@@ -35,8 +36,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <DictionaryPage setFontFamily={setFontFamily} toggleColorMode={toggleColorMode} />
+      <WordContextProvider>
+        <GlobalStyles />
+        <DictionaryPage setFontFamily={setFontFamily} toggleColorMode={toggleColorMode} />
+      </WordContextProvider>
     </ThemeProvider>
   );
 }
