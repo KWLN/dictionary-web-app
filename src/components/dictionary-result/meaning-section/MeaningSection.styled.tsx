@@ -1,11 +1,18 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { typography } from '../../../constants/tokens';
 
-export const Container = styled.div({
-  '& > *:not(:last-child)': {
-    marginBottom: '40px',
+export const Container = styled.div(
+  {
+    '& > *:not(:last-child)': {
+      marginBottom: '24px',
+    },
   },
-});
+  css`@media (min-width: 768px) {
+    & > *:not(:last-child) {
+      margin-bottom: 40px;
+    }
+},`
+);
 
 export const SectionHeader = styled.div({
   display: 'flex',

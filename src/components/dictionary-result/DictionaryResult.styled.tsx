@@ -1,11 +1,18 @@
 import styled, { css, keyframes } from 'styled-components';
 import { typography } from '../../constants/tokens';
 
-export const Container = styled.div({
-  '& > *:not(:last-child)': {
-    marginBottom: '40px',
+export const Container = styled.div(
+  {
+    '& > *:not(:last-child)': {
+      marginBottom: '28px',
+    },
   },
-});
+  css`@media (min-width: 768px) {
+    & > *:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  },`
+);
 
 const rotation = keyframes({
   '0%': {

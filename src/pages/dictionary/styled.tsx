@@ -11,13 +11,16 @@ export const Page = styled.div({
     padding: '58px 352px',
   },
 });
-// TODO: We need to adjust font sizes (and things like search bar height) based on screen width too :/
 
 export const PageHeader = styled.header({
-  marginBottom: '52px',
+  marginBottom: '24px',
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
+
+  '@media (min-width: 768px)': {
+    marginBottom: '52px',
+  },
 });
 
 export const Logo = styled.img({});
@@ -35,4 +38,10 @@ export const Divider = styled.hr((props) => ({
   background: props.theme.colors.divider,
 }));
 
-export const PageContent = styled.div({ marginTop: '48px' });
+export const PageContent = styled.div({
+  marginTop: '24px',
+
+  '@media (min-width: 768px)': {
+    marginTop: '48px',
+  },
+});

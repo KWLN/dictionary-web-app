@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { typography } from '../../../../constants/tokens';
 
 export const Heading = styled.h3((props) => ({
-  marginBottom: '24px',
+  marginBottom: '16px',
   color: props.theme.colors.textSecondary,
   fontSize: '16px',
   fontWeight: 400,
 
   '@media (min-width: 768px)': {
+    marginBottom: '24px',
     ...typography.headingSmall,
   },
 }));

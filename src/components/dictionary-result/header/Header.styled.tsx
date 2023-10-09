@@ -1,6 +1,4 @@
 import styled, { css } from 'styled-components';
-import playIcon from './assets/icon-play.svg';
-import playIconHovered from './assets/icon-play-hovered.svg';
 import { typography } from '../../../constants/tokens';
 
 export const HeaderContainer = styled.div({
