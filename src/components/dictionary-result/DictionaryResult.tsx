@@ -1,4 +1,5 @@
 import { ApiResponse, ResultEntry, isNoResultsFound } from '../../services/dictionary-api/types';
+import { withErrorBoundary } from 'react-error-boundary';
 import {
   Container,
   LoadingSpinner,
@@ -16,7 +17,7 @@ type Props = {
   error: Error | undefined;
 };
 
-export function DictionaryResult(props: Props) {
+function DictionaryResultContent(props: Props) {
   const { resultData, isLoading, error } = props;
 
   if (isLoading) {
@@ -71,3 +72,18 @@ export function DictionaryResult(props: Props) {
     </Container>
   );
 }
+
+function ErrorBoundaryFallback() {
+  return (
+    <NoResultState>
+      <NoResultStateHeading>Something went wrong</NoResultStateHeading>
+      <NoResultStateDescription>
+        Oops, an unexpected error occurred! Let a developer know and try again later.
+      </NoResultStateDescription>
+    </NoResultState>
+  );
+}
+
+export const DictionaryResult = withErrorBoundary(DictionaryResultContent, {
+  fallback: <ErrorBoundaryFallback />,
+});
