@@ -1,5 +1,3 @@
-// TODO: Remove unneeded fields and mark any nullable ones as such
-
 export type Definition = {
   antonyms: string[];
   definition: string;
