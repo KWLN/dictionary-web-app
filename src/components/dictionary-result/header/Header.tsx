@@ -17,12 +17,11 @@ export function Header(props: Props) {
 
   const [isPronunciationButtonHovered, setIsPronunciationButtonHovered] = useState<boolean>(false);
 
-  // TODO: Find first phonetic that has `audio`,
-  // otherwise disable or hide button if there is no `audio` at all.
-  // `pronunciation` can be undefined if `phonetics` is empty array.
-  // Currently, this causes the app to blow up with an error.
-  const pronunciation = phonetics[0];
-  const [play] = useSound(pronunciation.audio);
+  // Get the first item that has an audio source.
+  // If there are none, the pronunciation button should not be rendered.
+  const pronunciation = phonetics.find((item) => item.audio != undefined);
+  const audioSrc = pronunciation?.audio ?? '';
+  const [play] = useSound(audioSrc);
 
   const handlePronunciationButtonClick = () => {
     play();
@@ -42,13 +41,15 @@ export function Header(props: Props) {
         <Word>{word}</Word>
         <Phonetic>{phonetic}</Phonetic>
       </WordDetails>
-      <PronunciationButton
-        onClick={handlePronunciationButtonClick}
-        onMouseEnter={handlePronunciationButtonMouseEnter}
-        onMouseLeave={handlePronunciationButtonMouseLeave}
-      >
-        <ReactSVG src={isPronunciationButtonHovered ? PlayIconHovered : PlayIcon} />
-      </PronunciationButton>
+      {audioSrc && (
+        <PronunciationButton
+          onClick={handlePronunciationButtonClick}
+          onMouseEnter={handlePronunciationButtonMouseEnter}
+          onMouseLeave={handlePronunciationButtonMouseLeave}
+        >
+          <ReactSVG src={isPronunciationButtonHovered ? PlayIconHovered : PlayIcon} />
+        </PronunciationButton>
+      )}
     </HeaderContainer>
   );
 }
