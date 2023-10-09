@@ -9,7 +9,7 @@ export function Definitions(props: Props) {
   const { definitions } = props;
 
   return (
-    <>
+    <div>
       <Heading>Meaning</Heading>
       <List>
         {definitions.map((definition, index) => (
@@ -19,6 +19,6 @@ export function Definitions(props: Props) {
           </ListItem>
         ))}
       </List>
-    </>
+    </div>
   );
 }
