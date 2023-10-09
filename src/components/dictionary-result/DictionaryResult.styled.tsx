@@ -37,12 +37,21 @@ export const NoResultState = styled.div({
 });
 
 export const NoResultStateHeading = styled.p({
-  ...typography.headingSmall,
+  fontSize: '16px',
   fontWeight: 700,
+
+  '@media (min-width: 768px)': {
+    ...typography.headingSmall,
+    fontWeight: 700,
+  },
 });
 
 export const NoResultStateDescription = styled.p((props) => ({
   marginTop: '24px',
-  ...typography.bodyMedium,
   color: props.theme.colors.textSecondary,
+  fontSize: '15px',
+
+  '@media (min-width: 768px)': {
+    ...typography.bodyMedium,
+  },
 }));

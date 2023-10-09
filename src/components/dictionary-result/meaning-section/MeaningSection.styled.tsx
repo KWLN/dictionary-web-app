@@ -12,9 +12,14 @@ export const SectionHeader = styled.div({
 });
 
 export const PartOfSpeech = styled.h2({
-  ...typography.headingMedium,
+  ...typography.bodyMedium,
   fontWeight: 700,
   fontStyle: 'italic',
+
+  '@media (min-width: 768px)': {
+    ...typography.headingMedium,
+    fontWeight: 700,
+  },
 });
 
 export const Divider = styled.hr((props) => ({

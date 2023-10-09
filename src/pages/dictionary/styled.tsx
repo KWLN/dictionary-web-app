@@ -1,8 +1,17 @@
 import styled from 'styled-components';
 
 export const Page = styled.div({
-  padding: '58px 352px',
+  padding: '24px 24px',
+
+  '@media (min-width: 768px)': {
+    padding: '58px 40px',
+  },
+
+  '@media (min-width: 1440px)': {
+    padding: '58px 352px',
+  },
 });
+// TODO: We need to adjust font sizes (and things like search bar height) based on screen width too :/
 
 export const PageHeader = styled.header({
   marginBottom: '52px',

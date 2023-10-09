@@ -4,14 +4,24 @@ import { typography } from '../../../../constants/tokens';
 export const Heading = styled.h3((props) => ({
   marginBottom: '24px',
   color: props.theme.colors.textSecondary,
-  ...typography.headingSmall,
+  fontSize: '16px',
+  fontWeight: 400,
+
+  '@media (min-width: 768px)': {
+    ...typography.headingSmall,
+  },
 }));
 
 export const List = styled.ul({
   listStyle: 'none',
   paddingLeft: '48px',
   paddingRight: '48px',
-  ...typography.bodyMedium,
+  fontSize: '15px',
+  lineHeight: '24px',
+
+  '@media (min-width: 768px)': {
+    ...typography.bodyMedium,
+  },
 });
 
 export const ListItem = styled.li({

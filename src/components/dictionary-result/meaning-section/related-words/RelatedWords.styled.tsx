@@ -8,9 +8,14 @@ export const Container = styled.div({
 });
 
 export const Heading = styled.h3((props) => ({
-  color: props.theme.colors.textSecondary,
-  ...typography.headingSmall,
   flex: '1 1 0',
+  color: props.theme.colors.textSecondary,
+  fontSize: '16px',
+  fontWeight: 400,
+
+  '@media (min-width: 768px)': {
+    ...typography.headingSmall,
+  },
 }));
 
 export const WordList = styled.ul({
@@ -21,10 +26,15 @@ export const WordList = styled.ul({
 
 export const WordListItem = styled.li((props) => ({
   display: 'inline-block',
-  ...typography.headingSmall,
-  fontWeight: 700,
-  color: props.theme.colors.accent,
   cursor: 'pointer',
+  color: props.theme.colors.accent,
+  fontSize: '16px',
+  fontWeight: 700,
+
+  '@media (min-width: 768px)': {
+    ...typography.headingSmall,
+    fontWeight: 700,
+  },
 
   '&:not(:last-of-type)': {
     marginRight: '4px',
