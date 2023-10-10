@@ -1,7 +1,7 @@
 {
   "name": "dictionary-web-app",
   "version": "0.1.0",
-  "homepage": "https://kwln.github.io/frontend-mentor-dictionary-web-app",
+  "homepage": "https://kwln.github.io/dictionary-web-app/",
   "private": true,
   "dependencies": {
     "@types/node": "^16.18.50",
