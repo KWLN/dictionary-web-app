@@ -45,6 +45,8 @@ export function SearchBar() {
           placeholder="Search for any word..."
           value={inputValue}
           onChange={handleInputChange}
+          // eslint-disable-next-line jsx-a11y/no-autofocus
+          autoFocus
           $isInvalid={!!inputError}
         />
       </InputWrapper>
