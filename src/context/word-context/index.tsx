@@ -6,13 +6,13 @@ type Context = {
 };
 
 const WordContext = createContext<Context>({
-  currentWord: '',
+  currentWord: 'keyboard',
   setCurrentWord: () => null,
 });
 
 export function WordContextProvider(props: { children?: ReactNode }) {
   const { children } = props;
-  const [currentWord, setCurrentWord] = useState<string>('');
+  const [currentWord, setCurrentWord] = useState<string>('keyboard');
 
   return (
     <WordContext.Provider value={{ currentWord, setCurrentWord }}>{children}</WordContext.Provider>

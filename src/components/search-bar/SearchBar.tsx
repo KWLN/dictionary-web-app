@@ -7,7 +7,7 @@ import { useWordContext } from '../../context/word-context';
 
 export function SearchBar() {
   const { currentWord, setCurrentWord } = useWordContext();
-  const [inputValue, setInputValue] = useState<string>('');
+  const [inputValue, setInputValue] = useState<string>(currentWord);
   const [inputError, setInputError] = useState<InputError | null>(null);
 
   const debouncedInputValue = useDebounce(inputValue, 500);
