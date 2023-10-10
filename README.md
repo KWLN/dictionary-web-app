@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot of the dictionary web app](./screenshot.jpg)
+![Screenshot of the dictionary web app](./screenshot.png)
 
 ## Built with
 
