@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/frontend-mentor-dictionary-web-app/static/css/main.78e985f2.css",
-    "main.js": "/frontend-mentor-dictionary-web-app/static/js/main.bfdf3410.js",
-    "static/js/845.80dcf3cb.chunk.js": "/frontend-mentor-dictionary-web-app/static/js/845.80dcf3cb.chunk.js",
-    "static/media/Inter-Bold.ttf": "/frontend-mentor-dictionary-web-app/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
-    "static/media/Inter-Regular.ttf": "/frontend-mentor-dictionary-web-app/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
-    "static/media/Lora-Regular.ttf": "/frontend-mentor-dictionary-web-app/static/media/Lora-Regular.a85f0bab31bffada1e5f.ttf",
-    "static/media/Lora-Bold.ttf": "/frontend-mentor-dictionary-web-app/static/media/Lora-Bold.df378067bf8c002587b4.ttf",
-    "static/media/Inconsolata-Bold.ttf": "/frontend-mentor-dictionary-web-app/static/media/Inconsolata-Bold.37f99d4808fcd34262c5.ttf",
-    "static/media/Inconsolata-Regular.ttf": "/frontend-mentor-dictionary-web-app/static/media/Inconsolata-Regular.54748073d423bc6646f7.ttf",
-    "index.html": "/frontend-mentor-dictionary-web-app/index.html",
-    "static/media/icon-new-window.svg": "/frontend-mentor-dictionary-web-app/static/media/icon-new-window.17ac2f0f91916515096e759611fdaea9.svg",
-    "static/media/logo.svg": "/frontend-mentor-dictionary-web-app/static/media/logo.afbe15e827b060eab1c775e3afad2b73.svg",
-    "static/media/icon-moon.svg": "/frontend-mentor-dictionary-web-app/static/media/icon-moon.fd52e618de9fdb62d0edd814557c07e3.svg",
-    "static/media/icon-search.svg": "/frontend-mentor-dictionary-web-app/static/media/icon-search.13357ba7763bb4388cba203d0388c375.svg",
-    "static/media/icon-play-hovered.svg": "/frontend-mentor-dictionary-web-app/static/media/icon-play-hovered.ef5fc01e04d7e6193aba3df437d6e245.svg",
-    "static/media/icon-play.svg": "/frontend-mentor-dictionary-web-app/static/media/icon-play.a659db0104303a8b8ae071e0cf90119d.svg",
-    "main.78e985f2.css.map": "/frontend-mentor-dictionary-web-app/static/css/main.78e985f2.css.map",
-    "main.bfdf3410.js.map": "/frontend-mentor-dictionary-web-app/static/js/main.bfdf3410.js.map",
-    "845.80dcf3cb.chunk.js.map": "/frontend-mentor-dictionary-web-app/static/js/845.80dcf3cb.chunk.js.map"
+    "main.css": "/dictionary-web-app/static/css/main.63a78946.css",
+    "main.js": "/dictionary-web-app/static/js/main.7799882f.js",
+    "static/js/845.80dcf3cb.chunk.js": "/dictionary-web-app/static/js/845.80dcf3cb.chunk.js",
+    "static/media/Inter-Bold.ttf": "/dictionary-web-app/static/media/Inter-Bold.88fa7ae373b07b41ecce.ttf",
+    "static/media/Inter-Regular.ttf": "/dictionary-web-app/static/media/Inter-Regular.e89cb19905e7db5591b0.ttf",
+    "static/media/Lora-Regular.ttf": "/dictionary-web-app/static/media/Lora-Regular.a85f0bab31bffada1e5f.ttf",
+    "static/media/Lora-Bold.ttf": "/dictionary-web-app/static/media/Lora-Bold.df378067bf8c002587b4.ttf",
+    "static/media/Inconsolata-Bold.ttf": "/dictionary-web-app/static/media/Inconsolata-Bold.37f99d4808fcd34262c5.ttf",
+    "static/media/Inconsolata-Regular.ttf": "/dictionary-web-app/static/media/Inconsolata-Regular.54748073d423bc6646f7.ttf",
+    "index.html": "/dictionary-web-app/index.html",
+    "static/media/icon-new-window.svg": "/dictionary-web-app/static/media/icon-new-window.17ac2f0f91916515096e759611fdaea9.svg",
+    "static/media/logo.svg": "/dictionary-web-app/static/media/logo.afbe15e827b060eab1c775e3afad2b73.svg",
+    "static/media/icon-moon.svg": "/dictionary-web-app/static/media/icon-moon.fd52e618de9fdb62d0edd814557c07e3.svg",
+    "static/media/icon-search.svg": "/dictionary-web-app/static/media/icon-search.13357ba7763bb4388cba203d0388c375.svg",
+    "static/media/icon-play-hovered.svg": "/dictionary-web-app/static/media/icon-play-hovered.ef5fc01e04d7e6193aba3df437d6e245.svg",
+    "static/media/icon-play.svg": "/dictionary-web-app/static/media/icon-play.a659db0104303a8b8ae071e0cf90119d.svg",
+    "main.63a78946.css.map": "/dictionary-web-app/static/css/main.63a78946.css.map",
+    "main.7799882f.js.map": "/dictionary-web-app/static/js/main.7799882f.js.map",
+    "845.80dcf3cb.chunk.js.map": "/dictionary-web-app/static/js/845.80dcf3cb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78e985f2.css",
-    "static/js/main.bfdf3410.js"
+    "static/css/main.63a78946.css",
+    "static/js/main.7799882f.js"
   ]
 }
